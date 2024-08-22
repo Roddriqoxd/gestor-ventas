@@ -1,0 +1,21 @@
+<section class="title-container">
+    <div class="title-content">
+        <h4>{{title}}</h4>
+
+        <div class="nav-content">
+            <a href="">•Dashboard</a>
+            <a href="">•User</a>
+            <a href="">•New User</a>
+        </div>
+
+    </div>
+
+    @if (nameButton.length > 0) {
+     <button>
+        <mat-icon fontIcon="add"></mat-icon>
+        {{nameButton}}
+    </button>       
+    }
+
+
+</section>

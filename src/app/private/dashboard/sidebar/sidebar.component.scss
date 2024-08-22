@@ -1,0 +1,27 @@
+.sidebar-logo {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-nav {
+    background-color: rgb(177, 233, 233);
+}
+
+.navbar-section {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tree {
+    display: flex;
+    flex-direction: column;
+    // max-height: 0;
+    // opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}

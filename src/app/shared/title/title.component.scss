@@ -1,0 +1,41 @@
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        font-weight: 700;
+        font-size: 25px;
+    }
+}
+
+.nav-content {
+    display: flex;
+    gap: 10px;
+    
+    a {
+        font-size: 15px;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+button {
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 7px;
+    font-weight: 600;
+
+    mat-icon {
+        color: white;
+    }
+}
