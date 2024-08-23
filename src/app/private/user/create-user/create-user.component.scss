@@ -1,0 +1,11 @@
+@import url(../../../styles/_global-styles.scss);
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.card-image {
+    width: 50%;
+}

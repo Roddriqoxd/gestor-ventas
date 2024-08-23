@@ -1,3 +1,20 @@
 <section>
     <app-title [title]="'Create a new user'"></app-title>
 </section>
+
+<section class="cards-container">
+    <div class="card-section card-image">
+<label for="">s</label>
+    </div>
+    <div class="card-section card-form">
+        <form [formGroup]="form">
+            <input type="text">
+            <app-input
+              [control]="form.get(field.controlName)"
+              [label]="field.label"
+              [type]="field.type">
+            </app-input>
+            <button type="submit" [disabled]="form.invalid">Submit</button>
+          </form>
+    </div>
+</section>
