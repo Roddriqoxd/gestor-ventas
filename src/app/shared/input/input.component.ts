@@ -10,8 +10,7 @@ import { FormControl,FormControlName, ReactiveFormsModule } from '@angular/forms
 })
 export class InputComponent {
 
-  @Input() control!: FormControlName;
-  @Input() label!: string; 
+  @Input() label: string = 'Ejemplo' 
   @Input() type: string = 'text'; 
   
   constructor(){

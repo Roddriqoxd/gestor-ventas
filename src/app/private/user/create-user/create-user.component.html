@@ -7,14 +7,17 @@
 <label for="">s</label>
     </div>
     <div class="card-section card-form">
-        <form [formGroup]="form">
-            <input type="text">
-            <app-input
-              [control]="form.get(field.controlName)"
-              [label]="field.label"
-              [type]="field.type">
-            </app-input>
-            <button type="submit" [disabled]="form.invalid">Submit</button>
-          </form>
+        <div class="card-inputs">
+            <app-input [label]="'Name'"></app-input>
+            <app-input [label]="'Last name'"></app-input>
+            <app-input></app-input>
+            <app-input></app-input>
+        </div>
+        <div class="card-inputs">
+            <app-input></app-input>
+            <app-input></app-input>
+            <app-input></app-input>
+            <app-input></app-input>
+        </div>
     </div>
 </section>

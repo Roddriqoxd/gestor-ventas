@@ -9,3 +9,16 @@
 .card-image {
     width: 50%;
 }
+
+.card-form {
+display: flex;
+gap: 20px;
+padding: 20px;
+}
+
+.card-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
