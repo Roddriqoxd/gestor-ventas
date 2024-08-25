@@ -1,0 +1,19 @@
+button {
+    background-color: rgba(0, 0, 0, 0.897);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 15px 18px;
+    font-weight: 900;
+    font-size: 14px;
+
+    mat-icon {
+        color: white;
+        margin: -5px 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+    }
+}

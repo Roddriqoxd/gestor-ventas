@@ -11,10 +11,7 @@
     </div>
 
     @if (nameButton.length > 0) {
-     <button>
-        <mat-icon fontIcon="add"></mat-icon>
-        {{nameButton}}
-    </button>       
+     <app-button [iconName]="iconName" [name]="nameButton"></app-button>      
     }
 
 
