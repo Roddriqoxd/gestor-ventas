@@ -1,4 +1,4 @@
-<button>
+<button (click)="eventClick($event)">
     @if (iconName.length > 0) {
         <mat-icon [fontIcon]="iconName"></mat-icon>
     }

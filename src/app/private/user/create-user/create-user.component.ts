@@ -1,33 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TitleComponent } from "../../../shared/title/title.component";
 import { InputComponent } from "../../../shared/input/input.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { ButtonComponent } from "../../../shared/button/button.component";
+import { ConffetiDirective } from '../../../shared/conffeti.directive';
+import { time } from 'console';
+import { take, timer } from 'rxjs';
 
 @Component({
   selector: 'app-create-user',
   standalone: true,
-  imports: [TitleComponent, InputComponent, ReactiveFormsModule],
+  imports: [TitleComponent, InputComponent, ReactiveFormsModule, MatIconModule, ButtonComponent, ConffetiDirective],
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.scss'
 })
 export class CreateUserComponent {
-  form: FormGroup = new FormGroup({
-    'name': new FormControl('',[Validators.required]),
-    'email': new FormControl('',[Validators.required, Validators.email]),
-  })
 
-
-
-  // fields: { controlName: string, label: string, type: string }[] = [
-  //   { controlName: 'name', label: 'Name', type: 'text' },
-  //   { controlName: 'email', label: 'Email', type: 'email' },
-  //   { controlName: 'age', label: 'Age', type: 'number' }
-  // ];
+  @ViewChild('elemento') someInput!: ElementRef;
+  displayAnimation!: boolean;
 
   constructor(private fb: FormBuilder) {
-    // this.form = this.fb.group({});
-    // this.fields.forEach(field => {
-    //   this.form.addControl(field.controlName, this.fb.control('', Validators.required));
-    // });
+    this.displayAnimation = false;
   }
+
+  enviar($event: MouseEvent) {
+    this.displayAnimation = true;
+    timer(100).pipe(take(1)).subscribe(()=>{
+      this.displayAnimation = false;
+    })
+    }
+
 }

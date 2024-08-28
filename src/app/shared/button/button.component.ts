@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -11,4 +11,10 @@ import { MatIconModule } from '@angular/material/icon';
 export class ButtonComponent {
 @Input() name: any = 'Name button'
 @Input() iconName: any = 'add'
+@Output() onClick = new EventEmitter<MouseEvent>();
+
+
+eventClick(event: MouseEvent) {
+  this.onClick.emit(event)
+  }
 }

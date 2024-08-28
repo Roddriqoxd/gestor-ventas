@@ -4,20 +4,34 @@
 
 <section class="cards-container">
     <div class="card-section card-image">
-<label for="">s</label>
+
+        <!-- <input type="file"> -->
+
+        <div class="image-content-dashed">
+            <div class="image-content">
+                <mat-icon fontIcon="add_a_photo"></mat-icon>
+                <p>Upload photo</p>
+            </div>
+        </div>
+        <p class="image-format">Allowed *.jpeg, *.jpg, *.png, *.gif
+            max size of 3 Mb</p>
+        
     </div>
-    <div class="card-section card-form">
+    <div appConffeti [fireConfetti]="displayAnimation" #elemento [campo]="elemento" class="card-section card-form" >
         <div class="card-inputs">
             <app-input [label]="'Name'"></app-input>
             <app-input [label]="'Last name'"></app-input>
-            <app-input></app-input>
-            <app-input></app-input>
+            <app-input [label]="'addresse'"></app-input>
+            <app-input [label]="'CI'"></app-input>
         </div>
         <div class="card-inputs">
             <app-input></app-input>
             <app-input></app-input>
             <app-input></app-input>
             <app-input></app-input>
+            <div class="card-button">
+                <app-button (click)="enviar($event)" [name]="'Create user'"></app-button>
+            </div>
         </div>
     </div>
 </section>
