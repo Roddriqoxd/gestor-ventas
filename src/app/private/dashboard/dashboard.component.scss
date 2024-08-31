@@ -6,8 +6,6 @@
 }
 /* sidebar */
 .sidebar {
-    width: 300px;
-    background-color: rgb(163, 255, 127);
     height: 100%;
 }
 
@@ -15,11 +13,6 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-}
-
-.header {
-    height: 50px;
-    background-color: beige;
 }
 
 .main-content {

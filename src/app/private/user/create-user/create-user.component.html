@@ -17,9 +17,9 @@
             max size of 3 Mb</p>
         
     </div>
-    <div appConffeti [fireConfetti]="displayAnimation" #elemento [campo]="elemento" class="card-section card-form" >
+    <div class="card-section card-form" >
         <div class="card-inputs">
-            <app-input [label]="'Name'"></app-input>
+            <app-input [label]="'Name'" (value)="setUserInformation($event, 'name')"></app-input>
             <app-input [label]="'Last name'"></app-input>
             <app-input [label]="'addresse'"></app-input>
             <app-input [label]="'CI'"></app-input>

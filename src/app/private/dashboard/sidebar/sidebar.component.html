@@ -1,17 +1,53 @@
-<div class="sidebar-logo">
-    logo
-</div>
+<section class="slider-container">
+    <div class="sidebar-logo">
+        logo
+    </div>
 
-<nav class="sidebar-nav">
-    <section class="navbar-section">
-        <label>Administrador</label>
-        <div class="tree">
-            <a routerLink="/dash/create">Usuarios</a>
-            <a>Registro</a>
-            <a>Gestion</a>
-        </div>
-    </section>
-    <section class="navbar-section">
-        productos
-    </section>
-</nav>
+    <nav class="sidebar-nav">
+        <section class="navbar-section">
+            <div class="title" (click)="openAdmin(enlacesAdmin)">
+                <div>
+                    <mat-icon fontIcon="account_circle"></mat-icon>
+                    <label>Administrador</label>
+                </div>
+
+                <div>
+                    <mat-icon [class]="{'hidden': !iconAdmin, 'arrow': true}"  fontIcon="keyboard_arrow_right"></mat-icon>
+                    <mat-icon [class]="{'hidden': iconAdmin, 'arrow': true}" fontIcon="keyboard_arrow_down"></mat-icon>
+                </div>
+
+            </div>
+
+            <div #enlacesAdmin class="tree">
+                <a routerLink="/dashboard/create" [class]="{ 'active' : activeLink === 'create'}"
+                    (click)="setActiveLink('create')">Create</a>
+                <a routerLink="/dashboard/list" [class]="{ 'active' : activeLink === 'list'}"
+                    (click)="setActiveLink('list')">List</a>
+                <a>Profile</a>
+            </div>
+        </section>
+
+        <section class="navbar-section">
+            <div class="title" (click)="openProducts(enlacesProducts)">
+                <div>
+                    <mat-icon fontIcon="inventory_2"></mat-icon>
+                    <label>Products</label>
+                </div>
+
+                <div>
+                    <mat-icon [class]="{'hidden': !iconProd, 'arrow': true}"  fontIcon="keyboard_arrow_right"></mat-icon>
+                    <mat-icon [class]="{'hidden': iconProd, 'arrow': true}" fontIcon="keyboard_arrow_down"></mat-icon>
+                </div>
+
+            </div>
+
+            <div #enlacesProducts class="tree">
+                <a routerLink="/dashboard/create" [class]="{ 'active' : activeLink === 'products'}"
+                    (click)="setActiveLink('products')">Productos</a>
+                <a routerLink="/dashboard/list" [class]="{ 'active' : activeLink === 'sale'}"
+                    (click)="setActiveLink('sale')">Sale</a>
+                <a>Profile</a>
+            </div>
+        </section>
+    </nav>
+</section>

@@ -1,0 +1,40 @@
+@import url(../../../styles/_global-styles.scss);
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    app-input {
+        width: calc(100% - 50px);
+    }
+
+    app-button {
+        width: 50px;
+    }
+}
+
+.information-container {
+    padding-top: 30px;
+
+    thead {
+        background-color: rgb(218, 218, 218);
+        padding: 12px;
+    }
+
+    th {
+        text-align: start; 
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl,FormControlName, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -9,11 +9,13 @@ import { FormControl,FormControlName, ReactiveFormsModule } from '@angular/forms
   styleUrl: './input.component.scss'
 })
 export class InputComponent {
-
   @Input() label: string = 'Ejemplo' 
-  @Input() type: string = 'text'; 
-  
-  constructor(){
+  @Input() type: string = 'text'
+  @Output() value = new EventEmitter<string>();
 
-  }
+
+
+  saveChange(value: string) {
+    this.value.emit(value);
+    }
 }
