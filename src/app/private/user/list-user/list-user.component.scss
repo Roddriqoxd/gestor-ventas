@@ -28,13 +28,54 @@
 
 .information-container {
     padding-top: 30px;
+    font-size: 15px;
 
     thead {
-        background-color: rgb(218, 218, 218);
-        padding: 12px;
+        background-color: rgba(235, 235, 235, 0.404);
+        font-size: 15px;
     }
 
     th {
         text-align: start; 
+        padding: 12px;
+        color: rgb(117, 117, 117);
     }
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-size: 14px;
+            color: rgb(105, 105, 105);
+        }
+    }
+}
+
+td {
+    text-justify: center;
+}
+
+.edit-delete-container {
+    text-align: center;
+}
+
+.edit-icon {
+color: #5f5f5f;    
+}
+
+.delete-icon {
+    color: rgb(255, 85, 85);
 }

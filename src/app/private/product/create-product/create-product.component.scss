@@ -1,0 +1,12 @@
+@import url(../../../styles/_global-styles.scss);
+
+.card-details {
+    padding: 25px;
+}
+
+.inputs-container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

@@ -13,24 +13,29 @@
     align-items: center;
 }
 
-.sidebar-nav {}
+.sidebar-nav {
+    // border-bottom: 1px solid rgb(245, 245, 245);
+    // padding-bottom: 10px;
+}
 
 .navbar-section {
     display: flex;
     flex-direction: column;
     padding: 10px;
     margin-bottom: -10px;
+    font-size: 15px;
 
     .title {
-        background-color: #D6F1E8;
+        background-color: #d6f1e883;
         padding: 10px;
         border-radius: 15px;
-        color: #058359;
+        color: #00A76F;
         cursor: pointer;
         display: flex;
         gap: 5px;
         align-items: center;
         justify-content: space-between;
+        font-weight: 500;
 
         div{
             display: flex;

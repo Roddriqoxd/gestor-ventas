@@ -4,7 +4,6 @@ import { InputComponent } from "../../../shared/input/input.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from "../../../shared/button/button.component";
-import { ConffetiDirective } from '../../../shared/conffeti.directive';
 import { time } from 'console';
 import { Subject, take, takeUntil, timer } from 'rxjs';
 import { ApiService } from '../../../core/api.service';
@@ -14,7 +13,7 @@ import { User } from '../../../intefaces/user.interface';
 @Component({
   selector: 'app-create-user',
   standalone: true,
-  imports: [TitleComponent, InputComponent, ReactiveFormsModule, MatIconModule, ButtonComponent, ConffetiDirective,],
+  imports: [TitleComponent, InputComponent, ReactiveFormsModule, MatIconModule, ButtonComponent],
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.scss',
 })

@@ -4,6 +4,7 @@ import path from 'path';
 import { CreateUserComponent } from './private/user/create-user/create-user.component';
 import { LoginComponent } from './public/login/login.component';
 import { ListUserComponent } from './private/user/list-user/list-user.component';
+import { CreateProductComponent } from './private/product/create-product/create-product.component';
 
 export const routes: Routes = [
     {
@@ -11,12 +12,16 @@ export const routes: Routes = [
     }, 
     { path: 'dashboard', component: DashboardComponent, children: [
         {
-            path: 'create',
+            path: 'create-user',
             component: CreateUserComponent
         },
         {
-            path: 'list',
+            path: 'list-user',
             component: ListUserComponent
+        },
+        {
+            path: 'create-product',
+            component: CreateProductComponent
         }
     ] 
     },
