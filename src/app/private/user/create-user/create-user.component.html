@@ -5,7 +5,7 @@
 <section class="cards-container">
     <div class="card-section card-image">
 
-        <!-- <input type="file"> -->
+        <input (change)="showImage($event, imgs)" class="file" type="file">
 
         <div class="image-content-dashed">
             <div class="image-content">
@@ -15,6 +15,8 @@
         </div>
         <p class="image-format">Allowed *.jpeg, *.jpg, *.png, *.gif
             max size of 3 Mb</p>
+
+            <img class="img-content" #imgs src="" alt="">
         
     </div>
     <div class="card-section card-form" >

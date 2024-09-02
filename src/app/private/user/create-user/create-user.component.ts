@@ -47,6 +47,15 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   }
 
 
+  showImage(event: any, img: HTMLImageElement):void {
+    var file = event.target?.files[0];
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      img.src= event?.target?.result as string;
+    }
+    reader.readAsDataURL(file);
+  }
+
   ngOnDestroy(): void {
       this._unsuscribe.next(false)
   }

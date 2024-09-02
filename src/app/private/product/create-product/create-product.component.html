@@ -9,14 +9,37 @@
             <label>Title, short description, image...</label>
         </div>
 
-        <div class="inputs-container">
+        <div class="inputs-container-colunm">
             <app-input [label]="'Product name'"></app-input>
             <app-text-area [label]="'Details'"[rows]="10"></app-text-area>
         </div>
 
-    </div>
+        <div class="title-section">
+            <p>Content</p>
+        </div>
 
-    <div class="card-section card-form">
+        <div class="inputs-container">
+            <app-input [label]="''" [type]="'file'"></app-input>
+        </div>
+
+        <div class="title-section">
+            <p>Properties</p>
+            <label>Additional functions and attributes...</label>
+        </div>
+
+        <div class="inputs-container-row">
+            <app-input [type]="'number'" [label]="'Price'"></app-input>
+            <app-input [label]="'Category'"></app-input>
+        </div>
+
+        <div class="inputs-container-row">
+            <app-input [type]="'number'" [label]="'Sale price'"></app-input>
+            <app-input [type]="'number'" [label]="'Stock'"></app-input>
+        </div>
+
+        <div class="inputs-container-row button">
+            <app-button [name]="'Create product'"></app-button>
+        </div>
 
     </div>
 </section>

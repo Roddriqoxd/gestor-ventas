@@ -1,6 +1,6 @@
 <section class="slider-container">
     <div class="sidebar-logo">
-        logo
+        <mat-icon fontIcon="api"></mat-icon>
     </div>
 
     <nav class="sidebar-nav">
@@ -21,9 +21,9 @@
             <div #enlacesAdmin class="tree">
                 <a routerLink="/dashboard/create-user" [class]="{ 'active' : activeLink === 'create-user'}"
                     (click)="setActiveLink('create-user')">Create</a>
-                <a routerLink="/dashboard/list-user" [class]="{ 'active' : activeLink === 'list-user'}"
-                    (click)="setActiveLink('list-user')">List</a>
-                <a>Profile</a>
+                <a routerLink="/dashboard/user-list" [class]="{ 'active' : activeLink === 'user-list'}"
+                    (click)="setActiveLink('user-list')">List</a>
+                <!-- <a>Profile</a> -->
             </div>
         </section>
 
@@ -44,9 +44,9 @@
             <div #enlacesProducts class="tree">
                 <a routerLink="/dashboard/create-product" [class]="{ 'active' : activeLink === 'create-product'}"
                     (click)="setActiveLink('create-product')">Productos</a>
-                <a routerLink="/dashboard/list" [class]="{ 'active' : activeLink === 'sale'}"
-                    (click)="setActiveLink('sale')">Sale</a>
-                <a>Profile</a>
+                <a routerLink="/dashboard/product-list" [class]="{ 'active' : activeLink === 'product-list'}"
+                    (click)="setActiveLink('product-list')">List</a>
+                <!-- <a>Profile</a> -->
             </div>
         </section>
     </nav>

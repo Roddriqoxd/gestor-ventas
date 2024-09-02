@@ -1,4 +1,4 @@
-<div class="input-container">
+<div class="input-container" [class]="{'file' : type === 'file'}">
   <input #input (blur)="saveChange(input.value)" [type]="type" placeholder=" "/>
   <label class="label">{{ label }}</label>
 </div>
