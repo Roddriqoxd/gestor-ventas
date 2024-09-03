@@ -22,33 +22,36 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   @ViewChild('elemento') someInput!: ElementRef;
   displayAnimation!: boolean;
   data: any;
-  user!: User;
+  user!: any;
 
 
   private _unsuscribe: Subject<boolean>;
 
   constructor(private _api: ApiService) {
     this._unsuscribe = new Subject<boolean>
+    this.user = {};
   }
 
   ngOnInit(): void {
     this._unsuscribe.next(true);
-    this._api.getData().pipe(takeUntil(this._unsuscribe)).subscribe(()=>{
-
+    this._api.getData().pipe(takeUntil(this._unsuscribe)).subscribe((xx)=>{
+      console.log(xx)
     }
     );
   }
 
   enviar($event: MouseEvent) {
+    this._api.setData(this.user as User).subscribe()
   }
 
   public setUserInformation(value: string, name: string) {
-    this.user = {...this.user, name: value}
+    this.user[name] = value;
   }
 
 
   showImage(event: any, img: HTMLImageElement):void {
     var file = event.target?.files[0];
+    this.user['photo'] = file;
     var reader = new FileReader();
     reader.onload = function(event) {
       img.src= event?.target?.result as string;

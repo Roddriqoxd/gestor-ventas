@@ -22,17 +22,17 @@
     <div class="card-section card-form" >
         <div class="card-inputs">
             <app-input [label]="'Name'" (value)="setUserInformation($event, 'name')"></app-input>
-            <app-input [label]="'Phone number'"></app-input>
-            <app-input [label]="'addresse'"></app-input>
-            <app-input [label]="'CI'"></app-input>
-            <app-input [type]="'password'" [label]="'Password'"></app-input>
+            <app-input [label]="'Phone number'" (value)="setUserInformation($event, 'phone')"></app-input>
+            <app-input [label]="'addresse'" (value)="setUserInformation($event, 'address')"></app-input>
+            <app-input [label]="'CI'" (value)="setUserInformation($event, 'ci')"></app-input>
+            <app-input [type]="'password'" [label]="'Password'" (value)="setUserInformation($event, 'password')"></app-input>
         </div>
         <div class="card-inputs">
-            <app-input [label]="'User name'"></app-input>
-            <app-input [label]="'Last name'"></app-input>
-            <app-input [label]="'Rol'"></app-input>
-            <app-input [label]="'Addresse'"></app-input>
-            <app-input [type]="'password'" [label]="'Confirm password'"></app-input>
+            <app-input [label]="'Last name'" (value)="setUserInformation($event, 'lastname')"></app-input>
+            <app-input [label]="'User name'" (value)="setUserInformation($event, 'username')"></app-input>
+            <app-input [label]="'Rol'" (value)="setUserInformation($event, 'role')"></app-input>
+            <app-input [type]="'date'" [label]="'Birthdate'" (value)="setUserInformation($event, 'birthdate')"></app-input>
+            <app-input [type]="'password'" [label]="'Confirm password'" ></app-input>
             <div class="card-button">
                 <app-button (click)="enviar($event)" [name]="'Create user'"></app-button>
             </div>

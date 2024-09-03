@@ -7,6 +7,6 @@ export interface User {
     phone: string;
     role: string;
     address: string;
-    birhdate: string;
+    birthdate: string;
     photo: string;
 }

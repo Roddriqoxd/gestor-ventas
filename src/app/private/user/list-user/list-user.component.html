@@ -16,30 +16,33 @@
                 <th>Nombre</th>
                 <th>Phone number</th>
                 <th>Addresse</th>
-                <th>User</th>
+                <th>Birthdate</th>
                 <th>Role</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
+              @for (item of userList; track $index) {
               <tr>
                 <td class="perfil">
                   <img src="https://assets.minimals.cc/public/assets/images/mock/avatar/avatar-5.webp" alt="">
                   <div>
-                  <label>Reece Chung</label>
-                  <span>{{'letha.lubowitz24@yahoo.com '}} </span>    
+                  <label>{{item.name}}  {{item.lastname}}</label>
+                  <span>{{ item.username}} </span>    
                   </div>
 
                 </td>
-                <td>+91 22 1234 5678	</td>
-                <td>Grimes Inc</td>
-                <td>Software Developer</td>
-                <td>Administrator</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.address}}</td>
+                <td>{{ item.birthdate| date }}</td>
+                <td>{{ item.role}}</td>
                 <td class="edit-delete-container">
                     <mat-icon class="edit-icon" fontIcon="edit"></mat-icon>
                     <mat-icon class="delete-icon" fontIcon="delete"></mat-icon>
                 </td>
-              </tr>
+              </tr>                
+              }
+
             </tbody>
           </table>
     
