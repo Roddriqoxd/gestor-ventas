@@ -97,3 +97,106 @@
     display: flex;
     justify-content: end;
 }
+
+
+// input
+
+.input-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding-bottom: 10px;
+}
+
+input {
+    width: calc(100% - 10px);
+    height: 100%;
+    padding: 5px 0px 5px 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 212, 212);
+    outline: none;
+}
+
+label {
+    position: absolute;
+    font-size: 15px;
+    color: rgb(177, 177, 177);
+    top: 27%;
+    left: 10px;
+    transition: all .1s linear;
+    
+}
+
+input:focus ~label,input:not(:placeholder-shown) ~label {
+    top: -12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(87, 87, 87);
+    background-color: white;
+    padding: 0 3px;
+}
+
+input:focus {
+    border: 2px solid rgb(41, 41, 41);
+}
+
+input:hover {
+    border: 1px solid;
+}
+
+input[type="file"]::file-selector-button {
+    border: 2px solid rgba(0, 0, 0, 0);
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.file {
+    height: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+.error {
+    border:1px solid red;
+}
+
+.error:hover {
+    border:2px solid red;
+}
+
+.error:focus {
+    border:2px solid red;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.897);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 15px 18px;
+    font-weight: 900;
+    font-size: 14px;
+    width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.disabled {
+    opacity: 0.5;
+}

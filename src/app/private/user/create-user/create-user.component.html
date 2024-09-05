@@ -16,26 +16,56 @@
         <p class="image-format">Allowed *.jpeg, *.jpg, *.png, *.gif
             max size of 3 Mb</p>
 
-            <img class="img-content" #imgs src="" alt="">
-        
+        <img class="img-content" #imgs src="" alt="">
+
     </div>
-    <div class="card-section card-form" >
+    <form class="card-section card-form" [formGroup]="userForm">
         <div class="card-inputs">
-            <app-input [label]="'Name'" (value)="setUserInformation($event, 'name')"></app-input>
-            <app-input [label]="'Phone number'" (value)="setUserInformation($event, 'phone')"></app-input>
-            <app-input [label]="'addresse'" (value)="setUserInformation($event, 'address')"></app-input>
-            <app-input [label]="'CI'" (value)="setUserInformation($event, 'ci')"></app-input>
-            <app-input [type]="'password'" [label]="'Password'" (value)="setUserInformation($event, 'password')"></app-input>
-        </div>
-        <div class="card-inputs">
-            <app-input [label]="'Last name'" (value)="setUserInformation($event, 'lastname')"></app-input>
-            <app-input [label]="'User name'" (value)="setUserInformation($event, 'username')"></app-input>
-            <app-input [label]="'Rol'" (value)="setUserInformation($event, 'role')"></app-input>
-            <app-input [type]="'date'" [label]="'Birthdate'" (value)="setUserInformation($event, 'birthdate')"></app-input>
-            <app-input [type]="'password'" [label]="'Confirm password'" ></app-input>
-            <div class="card-button">
-                <app-button (click)="enviar($event)" [name]="'Create user'"></app-button>
+            <div class="input-container">
+                <input placeholder=" " formControlName="name" [class]="{'error': userForm.get('name')?.getError('required')}"/>
+                <label class="label">Name</label>
+            </div>
+            <div class="input-container">
+                <input  placeholder=" " formControlName="phone" [class]="{'error': userForm.get('phone')?.getError('pattern')}" />
+                <label class="label">Phone number</label>
+            </div>
+            <div class="input-container">
+                <input placeholder=" " />
+                <label class="label">Addresse</label>
+            </div>
+            <div class="input-container">
+                <input type="number" placeholder=" " />
+                <label class="label">CI</label>
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder=" " />
+                <label class="label">Password</label>
             </div>
         </div>
-    </div>
+        <div class="card-inputs">
+            <div class="input-container">
+                <input placeholder=" " />
+                <label class="label">Last name</label>
+            </div>
+            <div class="input-container">
+                <input placeholder=" " />
+                <label class="label">User name</label>
+            </div>
+            <div class="input-container">
+                <input placeholder=" " />
+                <label class="label">Role</label>
+            </div>
+            <div class="input-container">
+                <input type="date" placeholder=" " />
+                <label class="label">Birthdate</label>
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder=" " />
+                <label class="label">Confirm password</label>
+            </div>
+            <div class="card-button">
+                <button [disabled]="userForm.invalid" [class]="{'disabled':userForm.invalid}" (click)="console()">guardar</button>      
+            </div>
+        </div>
+    </form>
 </section>

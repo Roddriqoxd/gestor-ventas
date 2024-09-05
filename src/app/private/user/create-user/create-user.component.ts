@@ -23,18 +23,35 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   displayAnimation!: boolean;
   data: any;
   user!: any;
+  userForm: FormGroup<any>;
 
 
   private _unsuscribe: Subject<boolean>;
 
-  constructor(private _api: ApiService) {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _api: ApiService,
+  ) {
     this._unsuscribe = new Subject<boolean>
     this.user = {};
+
+
+    this.userForm = this._formBuilder.group({
+      name: ['',[Validators.required]],
+      phone: ['',[Validators.required,Validators.pattern('/^[0-9]$/')]],
+      addresse: ['',[Validators.required]],
+      ci: ['',[Validators.required]],
+      password: ['',[Validators.required]],
+      lastName: ['',[Validators.required]],
+      userName: ['',[Validators.required]],
+      role: ['',[Validators.required]],
+      birthdate: ['',[Validators.required]],
+    })
   }
 
   ngOnInit(): void {
     this._unsuscribe.next(true);
-    this._api.getData().pipe(takeUntil(this._unsuscribe)).subscribe((xx)=>{
+    this._api.getData().pipe(takeUntil(this._unsuscribe)).subscribe((xx) => {
       console.log(xx)
     }
     );
@@ -49,18 +66,22 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   }
 
 
-  showImage(event: any, img: HTMLImageElement):void {
+  showImage(event: any, img: HTMLImageElement): void {
     var file = event.target?.files[0];
     this.user['photo'] = file;
     var reader = new FileReader();
-    reader.onload = function(event) {
-      img.src= event?.target?.result as string;
+    reader.onload = function (event) {
+      img.src = event?.target?.result as string;
     }
     reader.readAsDataURL(file);
   }
 
+  console() {
+    console.log('se hace')
+    }
+
   ngOnDestroy(): void {
-      this._unsuscribe.next(false)
+    this._unsuscribe.next(false)
   }
 
 }
