@@ -38,7 +38,8 @@ export class CreateUserComponent implements OnInit, OnDestroy {
 
     this.userForm = this._formBuilder.group({
       name: ['',[Validators.required]],
-      phone: ['',[Validators.required,Validators.pattern('/^[0-9]$/')]],
+      // espresiones regulares
+      phone: ['',[Validators.required]],
       addresse: ['',[Validators.required]],
       ci: ['',[Validators.required]],
       password: ['',[Validators.required]],
@@ -58,7 +59,10 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   }
 
   enviar($event: MouseEvent) {
-    this._api.setData(this.user as User).subscribe()
+    this._formBuilder.group
+    this._formBuilder.array
+    this._formBuilder.control
+    this._formBuilder.record
   }
 
   public setUserInformation(value: string, name: string) {

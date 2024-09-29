@@ -1,5 +1,5 @@
 <section>
-    <app-title [title]="'Create a new user'"></app-title>
+    <app-title title="Create a new user"></app-title>
 </section>
 
 <section class="cards-container">
@@ -22,49 +22,49 @@
     <form class="card-section card-form" [formGroup]="userForm">
         <div class="card-inputs">
             <div class="input-container">
-                <input placeholder=" " formControlName="name" [class]="{'error': userForm.get('name')?.getError('required')}"/>
-                <label class="label">Name</label>
+                <input placeholder=" " formControlName="name" [class]="{'valid': !userForm.get('name')?.getError('required')}"/>
+                <label class="label">Name *</label>
             </div>
             <div class="input-container">
-                <input  placeholder=" " formControlName="phone" [class]="{'error': userForm.get('phone')?.getError('pattern')}" />
-                <label class="label">Phone number</label>
+                <input type="number"  placeholder=" " formControlName="phone" [class]="{'valid': !userForm.get('phone')?.getError('required')}" />
+                <label class="label">Phone number *</label>
             </div>
             <div class="input-container">
-                <input placeholder=" " />
-                <label class="label">Addresse</label>
+                <input placeholder=" " formControlName="addresse" [class]="{'valid': !userForm.get('addresse')?.getError('required')}"/>
+                <label class="label">Addresse *</label>
             </div>
             <div class="input-container">
-                <input type="number" placeholder=" " />
-                <label class="label">CI</label>
+                <input type="number" placeholder=" " formControlName="ci" [class]="{'valid': !userForm.get('ci')?.getError('required')}"/>
+                <label class="label">CI *</label>
             </div>
             <div class="input-container">
-                <input type="password" placeholder=" " />
-                <label class="label">Password</label>
+                <input type="password" placeholder=" " formControlName="password" [class]="{'valid': !userForm.get('password')?.getError('required')}"/>
+                <label class="label">Password *</label>
             </div>
         </div>
         <div class="card-inputs">
             <div class="input-container">
-                <input placeholder=" " />
-                <label class="label">Last name</label>
+                <input placeholder=" " formControlName="lastName" [class]="{'valid': !userForm.get('lastName')?.getError('required')}"/>
+                <label class="label">Last name *</label>
             </div>
             <div class="input-container">
-                <input placeholder=" " />
-                <label class="label">User name</label>
+                <input placeholder=" " formControlName="userName" [class]="{'valid': !userForm.get('userName')?.getError('required')}"/>
+                <label class="label">User name *</label>
             </div>
             <div class="input-container">
-                <input placeholder=" " />
-                <label class="label">Role</label>
+                <input placeholder=" " formControlName="role" [class]="{'valid': !userForm.get('role')?.getError('required')}" />
+                <label class="label">Role *</label>
             </div>
             <div class="input-container">
-                <input type="date" placeholder=" " />
-                <label class="label">Birthdate</label>
+                <input type="date" placeholder=" " formControlName="birthdate" [class]="{'valid': !userForm.get('birthdate')?.getError('required')}"/>
+                <label class="label">Birthdate *</label>
             </div>
             <div class="input-container">
                 <input type="password" placeholder=" " />
                 <label class="label">Confirm password</label>
             </div>
             <div class="card-button">
-                <button [disabled]="userForm.invalid" [class]="{'disabled':userForm.invalid}" (click)="console()">guardar</button>      
+                <button [disabled]="userForm.invalid" [class]="{'disabled':userForm.invalid}" (click)="enviar($event)">guardar</button>      
             </div>
         </div>
     </form>
